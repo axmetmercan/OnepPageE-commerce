@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeCommerce</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responisve.css">
+    <link rel="stylesheet" href="../css/sidemodal.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+
+
+
+
+        <!-- Header -->
+        <div class="header row row-between row-baseline shadow">
+
+            <div class="logo" style="margin-left: 2rem; cursor:pointer;">
+                <h1>MugCommerce</h1>
+            </div>
+
+
+            <!-- <div class="searchbar row m-5">
+                <form action="" class="row-baseline"">
+                    <input type=" text" class="p-3 shadow" style="border-radius: 1rem; margin-right:1rem;"
+                    placeholder="Search a product">
+
+                    <button class="btn btn-primary" style="padding: 1rem; border-radius:1rem;">Search</button>
+                </form>
+            </div> -->
+
+            <div class="operations row row-between m-5 " style="width: 12rem;">
+                <!--
+                <div class="btn btn-light trigger-wishlist">WishList</div>
+                <div class="modal modal-wishlist">
+                    <div class="modal-content-side">
+                        <span class="close-button close-button-wishlist">×</span>
+                        <h1>WishList</h1>
+                    </div>
+                </div> -->
+
+
+
+                <div class="btn btn-success trigger-basket">Basket</div>
+                <div class="modal modal-basket">
+                    <div class="modal-content-side ">
+                        <span class="close-button close-button-basket">×</span>
+                        <h1>Basket</h1>
+                        <div class="basket col col-centered" id="basket-area">
+                            <!-- Basket Product -->
+                            <!-- <div class="basket-product row">
+                                <img src="" alt="Image">
+                                <p>Product Titlea</p>
+
+                                    <div class="quantity">
+                                        <p>Quantity 5 P</p>
+                                        <p>Price 125 €</p>
+
+                                    </div>
+
+                                <div class="delete">Delete</div>
+                            </div> -->
+                        </div>
+
+
+                        <div class="btn btn-primary row-centered" id="pay" style="width: 100%;">Pay</div>
+                        <div style="width: 100%;" class="row row-centered p-5">
+                            <div class="btn btn-light pay row row-centered p-5" id="cont">Continue Shopping</div>
+
+
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="confirm-order dsp-n" id="confirmation">
+                            <hr>
+                            <h1>Confirm Order</h1>
+
+                            <form action="" class="col col-centered">
+                                <h2>Customer:</h2>
+                                <label for="">
+                                    <h3>Name</h3>
+                                </label>
+                                <input class="p-3 shadow" style="border-radius: 1rem; margin-right:1rem;" type="text"
+                                    name="shipping-address" id="" required>
+                                <label for="">
+                                    <h3>Surname</h3>
+                                </label>
+                                <input class="p-3 shadow" style="border-radius: 1rem; margin-right:1rem;" type="text"
+                                    name="shipping-address" id="" required>
+                                <h2>Delivery:</h2>
+                                <label for="">
+                                    <h3>Shipping Address</h3>
+                                </label>
+                                <textarea class="p-5 shadow"
+                                    style="border:0.1rem solid blue; border-radius: 1rem; margin-right:1rem;" required></textarea>
+
+
+                                <h2>Payment Method</h2>
+                            </form>
+
+                            <form action="" class="col col-centered p-5">
+                                <div class="row row-centered">
+
+
+                                    <label for="Credit">Credit Card</label>
+                                    <input type="radio" id="creditcard" name="payment" value="creditcard">
+                                    
+                                </div>
+
+
+                                <div class="row row-centered">
+                                    <label for="Wire">Wire Transfer</label>
+                                    <input type="radio" id="wiretransfer" name="payment" value="wiretransfer">
+                                </div>
+
+
+                            </form>
+
+
+
+
+                            <div class="btn btn-success row-centered " onclick="ordered()"
+                                style="width: 100%; margin-bottom:30px">Complete Order</div>
+
+
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="btn btn-warning trigger-add">Add Product</div>
+
+                <div class="modal modal-add">
+                    <div class="modal-content-side">
+                        <span class="close-button close-button-add">×</span>
+                        <h1>Add Product</h1>
+                        <h5 style="color:red;">Do not use same picture and name more than once !!!</h5>
+                        <form id="addform" class="col col-centered">
+                            <label for="title">
+                                <h3>Title</h3>
+                            </label>
+                            <input class="p-3 shadow" style="border-radius: 1rem; margin-right:1rem;" type="text"
+                                id="form-title" name="title" placeholder="Title" required>
+                            <br>
+                            <label for="price">
+                                <h3>Price</h3>
+                            </label>
+                            <input class="p-3 shadow" style="border-radius: 1rem; margin-right:1rem;" type="number"
+                                id="price" name="price" placeholder="€ Based Price" required>
+                            <br>
+                            <label for="info">
+                                <h3>Info</h3>
+                            </label>
+                            <!-- <textarea class="p-5 shadow" style="border:0.1rem solid blue; border-radius: 1rem; margin-right:1rem;"  ></textarea> -->
+                            <input class="p-3 shadow" style="border-radius: 1rem; margin-right:1rem;" type="text"
+                                id="info" name="info" placeholder="Info" required>
+                            <input type="file" id="productImage" class="m-5">
+
+                            <button class="btn btn-success row row-centered" style="width: 150px; height:50px;">Save
+                                product</button>
+                        </form>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <!-- Slider -->
+        <!-- <div class="slider shadow">
+            slider
+
+        </div> -->
+
+        <!-- Categories -->
+        <!-- <div class="categories shadow p-5">
+            <div class="cat">
+                <hr>
+                <div class="categories-item">
+
+                    <h3>Books</h3>
+
+                </div>
+                <hr>
+            </div>
+            <div class="cat">
+                <hr>
+                <div class="categories-item">
+
+                    <h3>Television</h3>
+
+                </div>
+                <hr>
+            </div>
+            <div class="cat">
+                <hr>
+                <div class="categories-item">
+
+                    <h3>Mobile Phone</h3>
+
+                </div>
+                <hr>
+            </div>
+            <div class="cat">
+                <hr>
+                <div class="categories-item">
+
+                    <h3>Computers</h3>
+
+                </div>
+                <hr>
+            </div>
+            <div class="cat">
+                <hr>
+                <div class="categories-item">
+
+                    <h3>Smartwatchs</h3>
+
+                </div>
+                <hr>
+            </div>
+
+        </div> -->
+
+        <!-- Filters -->
+
+        <div class="filters shadow col col-centered" style="padding-top:50px;">
+            <h2>Categories</h2>
+            <!-- <a href="#productsarea" class="btn btn-light m-5 row row-centered"
+                style="width: 120px; text-decoration:none"> Home Textile</a> -->
+            <a href="#productsarea" class="btn btn-light m-5 row row-centered"
+                style="width: 120px; text-decoration:none"> Home & Garden</a>
+            <a href="#productsarea" class="btn btn-light m-5 row row-centered"
+                style="width: 120px; text-decoration:none"> Toy & Childrens</a>
+            <a href="#productsarea" class="btn btn-light m-5 row row-centered"
+                style="width: 120px; text-decoration:none"> Kitchen</a>
+            <a href="#productsarea" class="btn btn-light m-5 row row-centered"
+                style="width: 120px; text-decoration:none"> Foods & Grocery</a>
+            <a href="#productsarea" class="btn btn-light m-5 row row-centered"
+                style="width: 120px; text-decoration:none"> Car & Motorbike</a>
+            <a href="#productsarea" class="btn btn-light m-5 row row-centered"
+                style="width: 120px; text-decoration:none">Pets</a>
+        </div>
+
+        <!-- Products -->
+        <div class="products-area" id="#productsarea">
+
+
+
+
+            <div class="product card  col-centered">
+                <h4 class="p-5 m-5 productTitle">Special Mug For Computer Scientists</h4>
+                <img class="prodImg trigger-detail" id="img" src="../img/products/se.jpg" alt="">
+                <p class="prodPrice">149 €</p>
+                <!-- <div class="add-cart row-centered btn btn-success ">Add to Cart</div> -->
+                <div class="modal modal-detail">
+                    <div class="modal-content-center prodDetail">
+                        <span class="close-button close-button-detail">×</span>
+                        <h1>Details</h1>
+                        <p class="row row-centered heading" id="prodTitle">Special Mug For Computer Scientists
+                        </p>
+                        <div class="row row-centered">
+
+                            <img class="prodImg" id="img" style="border:2px solid black ;width: 20rem; height:20rem;"
+                                src="../img/products/se.jpg" alt="">
+
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type and scrambled it to make a type specimen book. It has
+                                survived not only five centuries, but also the leap into electronic typesetting,
+                                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </p>
+
+                        </div>
+                        <p class="prodPrice row row-centered">149 €</p>
+                        <div class="row row-centered mtb-5 border  btn-light" id="add-cart">Add to Cart</div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product card  col-centered">
+                <h4 class="p-5 m-5 productTitle">Special Mug For Engineers
+                </h4>
+                <img class="prodImg trigger-detail" id="img" src="../img/products/eng.jpg" alt="">
+                <p class="prodPrice">99 €</p>
+                <!-- <div class="add-cart row-centered btn btn-success ">Add to Cart</div> -->
+                <div class="modal modal-detail">
+                    <div class="modal-content-center prodDetail">
+                        <span class="close-button close-button-detail">×</span>
+                        <h1>Details</h1>
+                        <p class="row row-centered heading">Special Mug For Engineers
+                        </p>
+                        <div class="row row-centered">
+
+                            <img class="detImg" id="img" style="border:2px solid black ;width: 20rem; height:20rem;"
+                                src="../img/products/eng.jpg" alt="">
+
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type and scrambled it to make a type specimen book. It has
+                                survived not only five centuries, but also the leap into electronic typesetting,
+                                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </p>
+
+                        </div>
+                        <p class="prodPrice row row-centered">99 €</p>
+                        <div class="row row-centered mtb-5 border  btn-light" id="add-cart">Add to Cart</div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="product card  col-centered">
+                <h4 class="p-5 m-5 productTitle">Special Mug For Doctors
+                </h4>
+                <img class="prodImg trigger-detail" id="img" src="../img/products/doc.jpg" alt="">
+                <p class="prodPrice">120 €</p>
+                <!-- <div class="add-cart row-centered btn btn-success ">Add to Cart</div> -->
+                <div class="modal modal-detail">
+                    <div class="modal-content-center prodDetail">
+                        <span class="close-button close-button-detail">×</span>
+                        <h1>Details</h1>
+                        <p class="row row-centered heading">Special Mug For Doctors
+                        </p>
+                        <div class="row row-centered">
+
+                            <img class="detImg" id="img" style="border:2px solid black ;width: 20rem; height:20rem;"
+                                src="../img/products/doc.jpg" alt="">
+
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type and scrambled it to make a type specimen book. It has
+                                survived not only five centuries, but also the leap into electronic typesetting,
+                                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </p>
+
+                        </div>
+                        <p class="prodPrice row row-centered">120 €</p>
+                        <div class="row row-centered mtb-5 border  btn-light" id="add-cart">Add to Cart</div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="product card  col-centered">
+                <h4 class="p-5 m-5 productTitle">Standart Mug
+                </h4>
+                <img class="prodImg trigger-detail" id="img" src="../img/products/mug.jpg" alt="">
+                <p class="prodPrice">7 €</p>
+                <!-- <div class="add-cart row-centered btn btn-success ">Add to Cart</div> -->
+                <div class="modal modal-detail">
+                    <div class="modal-content-center prodDetail">
+                        <span class="close-button close-button-detail">×</span>
+                        <h1>Details</h1>
+                        <p class="row row-centered heading">Standart Mug
+                        </p>
+                        <div class="row row-centered">
+
+                            <img class="detImg" id="img" style="border:2px solid black ;width: 20rem; height:20rem;"
+                                src="../img/products/mug.jpg" alt="">
+
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type and scrambled it to make a type specimen book. It has
+                                survived not only five centuries, but also the leap into electronic typesetting,
+                                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </p>
+
+                        </div>
+                        <p class="prodPrice row row-centered">7 €</p>
+                        <div class="row row-centered mtb-5 border  btn-light" id="add-cart">Add to Cart</div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+        </div>
+
+        <!-- Subscription -->
+        <div class="subscription shadow radius-3 row row-centered">
+
+            <h1 style="display:flex; flex-direction:row; justify-content:center; align-items:center; height:100%;">
+                Advertisments Area</h1>
+
+            <!-- <form action="">
+                <input type="text" placeholder="example@yourmail.com" class="radius-3 p-3" style="width:250px">
+                <button class="btn btn-success row row-centered" style="width: 150px; height:40px;">Subscribe</button>
+            </form> -->
+        </div>
+        <!-- Footer -->
+        <div class="footer shadow">
+            <h1 style="display:flex; flex-direction:row; justify-content:center; align-items:center; height:100%;">
+                Footer Area</h1>
+        </div>
+
+    </div>
+    <script src="../js/books.js"></script>
+
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>
+
+
+<!-- ürübleri local storage kaydet ürünleri yüklediğin fonksiyonla çağır. -->

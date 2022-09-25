@@ -1,0 +1,68 @@
+
+@media only screen and (max-width: 1200px) {
+    .container{
+        /* Grid Area */
+
+        grid-template-areas: 
+                    "header header header header header"
+                    "slider slider slider slider slider"
+                    "categories categories categories categories categories"
+                    "filters filters filters filters filters"
+                    "products products products products products" 
+                    "subscription subscription subscription subscription subscription"
+                    "footer footer footer footer footer ";
+    }
+
+    .header{
+        height: 10rem;
+        justify-content: center;
+    
+    }
+
+    .filters {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 1.5rem;
+    }
+    
+    .slider{
+        height: 15rem;
+    }
+    .categories{
+        border-radius: 1.5rem;
+    }
+
+    .filters{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .products-area{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0px;
+        margin: 0px;
+    }
+    
+
+
+
+    .subscription > form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+    .subscription > form > button {
+        margin-top: 1rem;
+    }
+
+
+  }
